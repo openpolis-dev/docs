@@ -30,8 +30,8 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="SEEDAO IS A NETWORK POLIS TO CONNECT MILLIONS OF NOMADS IN WEB3.">
       <HomepageHeader />
       <main>
         <HomepageFeatures />
