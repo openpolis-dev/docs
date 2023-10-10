@@ -33,28 +33,56 @@ const config = {
   },
 
   presets: [
+    // [
+    //   'classic',
+    //   /** @type {import('@docusaurus/preset-classic').Options} */
+    //   ({
+    //     docs: {
+    //       sidebarPath: require.resolve('./sidebars.js'),
+    //       // Please change this to your repo.
+    //       // Remove this to remove the "edit this page" links.
+    //       editUrl:
+    //         'https://github.com/Taoist-Labs/docs',
+    //     },
+    //     blog: {
+    //       showReadingTime: true,
+    //       // Please change this to your repo.
+    //       // Remove this to remove the "edit this page" links.
+    //       editUrl:
+    //         'https://github.com/Taoist-Labs/docs',
+    //     },
+    //     theme: {
+    //       customCss: require.resolve('./src/css/custom.css'),
+    //     },
+    //   }),
+    // ],
+
     [
-      'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
+      "docusaurus-preset-openapi",
+      /** @type {import('docusaurus-preset-openapi').Options} */
+      {
+        api: {
+          path: "./docs/api/petstore.yaml",
+          routeBasePath: "/api",
+        },
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Taoist-Labs/docs',
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Taoist-Labs/docs',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
-      }),
+      },
     ],
   ],
 
