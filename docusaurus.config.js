@@ -57,7 +57,7 @@ const config = {
       /** @type {import('docusaurus-preset-openapi').Options} */
       ({
         api: {
-          path: "api/",
+          path: "seedao-docs/",
           routeBasePath: "/",
         },
         docs: {
