@@ -184,7 +184,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} SeeDAO. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} SeeDAO.`,
       },
       prism: {
         theme: lightCodeTheme,
