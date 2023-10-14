@@ -11,7 +11,7 @@ const config = {
   favicon: "img/favicon.ico",
 
   // Set the production url of your site here
-  url: "https://your-docusaurus-test-site.com",
+  url: "https://docs.seedao.tech",
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: "/",
@@ -39,40 +39,76 @@ const config = {
   },
 
   presets: [
+    // [
+    //   "classic",
+    //   /** @type {import('@docusaurus/preset-classic').Options} */
+    //   ({
+    //     docs: {
+    //       sidebarPath: require.resolve("./sidebars.js"),
+    //     },
+    //     theme: {
+    //       customCss: require.resolve("./src/css/custom.css"),
+    //     },
+    //   }),
+    // ],
+
     [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
+      "docusaurus-preset-openapi",
+      /** @type {import('docusaurus-preset-openapi').Options} */
       ({
+        api: {
+          path: "api/",
+          routeBasePath: "/",
+        },
         docs: {
           sidebarPath: require.resolve("./sidebars.js"),
+          // Please change this to your repo.
+          editUrl:
+            "https://github.com/cloud-annotations/docusaurus-openapi/edit/main/demo/",
         },
+        blog: false,
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
+        // proxy: {
+        //   "/proxy": {
+        //     target: "http://localhost:8091",
+        //     pathRewrite: { "^/proxy": "" },
+        //   },
+        // },
       }),
     ],
   ],
   plugins: [
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "sns",
-        path: "sns",
-        routeBasePath: "sns",
-        sidebarPath: require.resolve("./sidebars.js"),
-        // ... other options
-      },
-    ],
-    [
-      "@docusaurus/plugin-content-docs",
-      {
-        id: "seepass",
-        path: "seepass",
-        routeBasePath: "seepass",
-        sidebarPath: require.resolve("./sidebars.js"),
-        // ... other options
-      },
-    ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "sns",
+    //     path: "sns",
+    //     routeBasePath: "sns",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //     // ... other options
+    //   },
+    // ],
+    // [
+    //   "@docusaurus/plugin-content-docs",
+    //   {
+    //     id: "seepass",
+    //     path: "seepass",
+    //     routeBasePath: "seepass",
+    //     sidebarPath: require.resolve("./sidebars.js"),
+    //     // ... other options
+    //   },
+    // ],
+
+    // [
+    //   "docusaurus-plugin-openapi",
+    //   {
+    //     id: "multi-spec",
+    //     path: "api",
+    //     routeBasePath: "/",
+    //   },
+    // ],
   ],
 
   themeConfig:
@@ -87,44 +123,16 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          {
-            type: "docSidebar",
-            sidebarId: "tutorialSidebar",
-            position: "left",
-            label: "Tutorial",
-          },
-          {
-            to: "/sns/intro", // To highlight the navbar item, you must link to a document, not a top-level directory
-            position: "left",
-            label: "SNS",
-            activeBaseRegex: `/sns/`,
-          },
-          {
-            to: "/seepass/intro", // To highlight the navbar item, you must link to a document, not a top-level directory
-            position: "left",
-            label: "SeePASS",
-            activeBaseRegex: `/seepass/`,
-          },
-          {
-            type: "dropdown",
-            label: "Products",
-            position: "left",
-            items: [
-              {
-                to: "/sns/intro", // To highlight the navbar item, you must link to a document, not a top-level directory
-                label: "SNS",
-                activeBaseRegex: `/sns/`,
-              },
-              {
-                to: "/seepass/intro", // To highlight the navbar item, you must link to a document, not a top-level directory
-                label: "SeePASS",
-                activeBaseRegex: `/seepass/`,
-              },
-            ],
-          },
+          // {
+          //   type: "docSidebar",
+          //   sidebarId: "tutorialSidebar",
+          //   position: "left",
+          //   label: "Tutorial",
+          // },
+  
           {
             type: "localeDropdown",
-            position: "left",
+            position: "right",
           },
           {
             href: "https://github.com/Taoist-Labs/docs",
@@ -136,20 +144,20 @@ const config = {
       footer: {
         style: "dark",
         links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
+          // {
+          //   title: "Docs",
+          //   items: [
+          //     {
+          //       label: "Tutorial",
+          //       to: "/docs/intro",
+          //     },
+          //   ],
+          // },
           {
             title: "Community",
             items: [
               {
-                label: "OpenSea Collection",
+                label: "SEED Collection",
                 href: "https://opensea.io/collection/seedaoseed",
               },
               {
@@ -181,6 +189,10 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      api: {
+        authPersistance: "localStorage",
+        serverVariablesPersistance: "localStorage",
       },
     }),
 };
