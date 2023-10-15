@@ -90,17 +90,7 @@ const config = {
     //     // ... other options
     //   },
     // ],
-    // [
-    //   "@docusaurus/plugin-content-docs",
-    //   {
-    //     id: "seepass",
-    //     path: "seepass",
-    //     routeBasePath: "seepass",
-    //     sidebarPath: require.resolve("./sidebars.js"),
-    //     // ... other options
-    //   },
-    // ],
-
+    
     // [
     //   "docusaurus-plugin-openapi",
     //   {
@@ -129,7 +119,11 @@ const config = {
           //   position: "left",
           //   label: "Tutorial",
           // },
-  
+          {
+            href: "https://seedao.canny.io/",
+            label: "Feedback",
+            position: "right",
+          },
           {
             type: "localeDropdown",
             position: "right",
