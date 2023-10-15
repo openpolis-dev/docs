@@ -90,7 +90,7 @@ const config = {
     //     // ... other options
     //   },
     // ],
-    
+
     // [
     //   "docusaurus-plugin-openapi",
     //   {
@@ -110,7 +110,7 @@ const config = {
         title: "SeeDAO Polis Docs",
         logo: {
           alt: "My Site Logo",
-          src: "img/logo.svg",
+          src: "img/logo.png",
         },
         items: [
           // {
