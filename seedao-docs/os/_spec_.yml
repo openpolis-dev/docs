@@ -1,1625 +1,185 @@
-openapi: '3.0.2'
-info:
-  title: Super App API
-  version: '1.0'
-servers:
-  - url: https://api.example.com/v1
-  - url: http://localhost:8080/v1
+---
+openapi: 3.0.0
 paths:
-  # /proposals:
-  #   get:
-  #     responses:
-  #       '200':
-  #         description: OK
-  #   post:
-  #     responses:
-  #       '201':
-  #         description: Created
-
-  /user/login:
-    post:
-      tags: [ user ]
-      summary: user login
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              $ref: "#/components/schemas/LoginRequest"
-      responses:
-        400:
-          description: verify signature error
-        500:
-          description: Find user record by wallet error
-        200:
-          description: user login successfully
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/LoginResp"
-
-
-  /user/users:
+  "/profile/{userAddr}":
     get:
-      tags: [ user ]
-      summary: query multiple users by wallet
+      operationId: ProfileController_get
       parameters:
-        - name: wallets
-          in: query
-          description: wallet address of users to be queried
-          explode: true
-          schema:
-            type: array
-            items:
-              description: single wallet address
-              type: string
+      - name: userAddr
+        required: true
+        in: path
+        description: user address, should be valid wallet or sns name
+        schema:
+          type: string
       responses:
-        500:
-          description: got internal error
-        200:
-          description: return found users
+        '200':
+          description: ''
           content:
-            "application/json":
+            application/json:
               schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-                  data:
-                    type: array
-                    items:
-                      $ref: "#/components/schemas/User"
-
-
-  /user/me:
+                "$ref": "#/components/schemas/ShowProfileDto"
+      tags:
+      - profile
+  "/seepass/{userAddr}":
     get:
-      tags: [ user ]
-      security:
-        - bearerAuth: [ ]
-      summary: get self user detail
-      responses:
-        200:
-          description: return user detail data
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/User"
-    put:
-      tags: [ user ]
-      security:
-        - bearerAuth: [ ]
-      summary: update user detail data
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              $ref: "#/components/schemas/UpdateUserRequest"
-      responses:
-        200:
-          description: user profile updated successfully
-
-  /user/logout:
-    get:
-      tags: [ user ]
-      security:
-        - bearerAuth: [ ]
-      summary: logout user
-      responses:
-        200:
-          description: OK
-
-  /projects:
-    get:
-      tags: [ project ]
-      summary: List all projects match the query params
+      operationId: SeepassController_get
       parameters:
-        - name: page
-          in: query
-          description: which page
-          schema:
-            type: number
-          required: false
-        - name: size
-          in: query
-          description: size of each page
-          schema:
-            type: number
-        - name: sort_field
-          in: query
-          schema:
-            type: string
-        - name: sort_order
-          in: query
-          schema:
-            type: string
-            enum: [ asc, desc ]
+      - name: userAddr
+        required: true
+        in: path
+        description: user address, should be valid wallet or sns name
+        schema:
+          type: string
       responses:
         '200':
-          description: OK
+          description: ''
           content:
-            "application/json":
+            application/json:
               schema:
-                type: object
-                properties:
-                  page:
-                    type: number
-                  size:
-                    type: number
-                  total:
-                    type: number
-                  rows:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Project'
-    post:
-      tags: [ project ]
-      summary: Create project
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              $ref: '#/components/schemas/NewProjectRequest'
-      responses:
-        '201':
-          description: Created
-
-  /projects/{id}:
-    get:
-      tags: [ project ]
-      description: Show project detail
-      parameters:
-        - name: id
-          in: path
-          description: id of the project
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: OK
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      project:
-                        $ref: '#/components/schemas/Project'
-                      budgets:
-                        type: array
-                        items:
-                          $ref: "#/components/schemas/BudgetRecord"
-    put:
-      tags: [ project ]
-      summary: Update project meta info
-      parameters:
-        - name: id
-          in: path
-          description: id of the project
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                logo:
-                  type: string
-                  description: project logo
-                name:
-                  type: string
-                  description: project name
-      responses:
-        '200':
-          description: project updated successfully
-
-  /projects/{id}/close:
-    post:
-      tags: [ project ]
-      description: create a close_project application, note this may be able to merged to application APIs
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      responses:
-        200:
-          description: ok
-
-  /my_projects:
-    get:
-      tags: [ project ]
-      description: list my projects
-      parameters:
-        - name: page
-          in: query
-          description: which page
-          schema:
-            type: number
-          required: false
-        - name: size
-          in: query
-          description: size of each page
-          schema:
-            type: number
-        - name: sort_field
-          in: query
-          schema:
-            type: string
-        - name: sort_order
-          in: query
-          schema:
-            type: string
-            enum: [ asc, desc ]
-      responses:
-        '200':
-          description: OK
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  page:
-                    type: number
-                  size:
-                    type: number
-                  total:
-                    type: number
-                  rows:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/Project'
-
-  /projects/{id}/update_sponsors:
-    post:
-      tags: [ project ]
-      description: update sponsors for project
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                sponsors:
-                  type: array
-                  items:
-                    type: string
-                    description: sponsor wallet address
-      responses:
-        '200':
-          description: sponsor update
-
-  /projects/{id}/update_member:
-    post:
-      tags: [ project ]
-      description: Update member of the project
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                members:
-                  type: array
-                  items:
-                    type: string
-                    description: member wallet address
-      responses:
-        '200':
-          description: member update
-
-  /projects/{id}/update_budget:
-    post:
-      tags: [ project ]
-      description: Update budget of the project
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                id:
-                  type: string
-                  description: budget record ID
-                asset_name:
-                  type: string
-                  description: budget asset name
-                total_amount:
-                  type: string
-                  description: total amount of the budget
-      responses:
-        '200':
-          description: budget updated
-
-  /projects/{id}/add_related_proposal/{proposal_id}:
-    post:
-      tags: [ project ]
-      description: add proposal to project
-      parameters:
-        - name: id
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: proposal_id
-          in: path
-          required: true
-          description: proposal ID that will be added to the project
-          schema:
-            type: string
-      responses:
-        200:
-          description: proposal added to project successfully
-
-  /treasury/current:
-    get:
-      tags: [ treasury ]
-      description: get current quarter treasury record
-      responses:
-        '200':
-          description: return current budget record
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-                  data:
-                    $ref: "#/components/schemas/TreasuryAssetResponse"
-
-
-  /treasury/update_assets:
-    post:
-      tags: [ treasury ]
-      description: >
-        update assets total amount of current quarter record, if record with given budget type and asset name 
-        is not existing, a new record will be created
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: array
-              items:
-                type: object
-                properties:
-                  asset_name:
-                    type: string
-                    description: Name of the assets
-                  budget_type:
-                    type: string
-                    description: Budget type of this record
-                    enum: [ credit, coin ]
-                  total_amount:
-                    type: string
-                    description: Total amount of the asset
-      responses:
-        '200':
-          description: asset records has been updated successfully
-          content:
-            'application/json':
-              schema:
-                $ref: "#/components/schemas/TreasuryAssetResponse"
-
-  #  /projects/{id}/new_reward_request:
-  #    post:
-  #      tags: [ project ]
-  #      description: Create new reward application for specified user
-  #      parameters:
-  #        - name: id
-  #          in: path
-  #          required: true
-  #          schema:
-  #            type: string
-  #      requestBody:
-  #        content:
-  #          "application/json":
-  #            schema:
-  #              type: array
-  #              items:
-  #                type: object
-  #                properties:
-  #                  target_wallet:
-  #                    type: string
-  #                    description: target wallet of
-  #                  amount:
-  #                    type: number
-  #                    description: new total amount
-  #                    minimum: 0
-  #                  token_type:
-  #                    type: string
-  #                    description: reward type, should be existing type in project budgets
-  #                  category:
-  #                    type: string
-  #                    description: reward category
-  #                  comment:
-  #                    type: string
-  #                    description: comment for this reward
-  #                  reward_source:
-  #                    type: string
-  #                    description: where the reward is coming from
-  #      responses:
-  #        '200':
-  #          description: budget updated
-
-
-  /applications:
-    get:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      summary: list all applications
-      description: >
-        The requests contains all type of requests listed above, which contains :
-        * Project related:
-          * Close project
-        * Credit and Token
-          * Credit reward
-          * Token reward
-
-        This API returns requests based on query params
-      parameters:
-        - name: page
-          in: query
-          description: which page
-          schema:
-            type: number
-          required: false
-        - name: size
-          in: query
-          description: size of each page
-          schema:
-            type: number
-        - name: sort_field
-          in: query
-          schema:
-            type: string
-        - name: sort_order
-          in: query
-          schema:
-            type: string
-            enum: [ asc, desc ]
-        - name: type
-          in: query
-          required: true
-          schema:
-            type: string
-            enum: [ close_project, new_reward ]
-        - name: entity
-          in: query
-          required: true
-          description: project or guild, one query can only get data from one type of entity
-          schema:
-            type: string
-            enum: [ project, guild ]
-        - name: entity_id
-          in: query
-          required: false
-          schema:
-            type: string
-            description: entity ID for the application
-        - name: start_date
-          in: query
-          required: false
-          schema:
-            type: string
-            description: start date of applications, must be used with end_date
-        - name: end_date
-          in: query
-          required: false
-          schema:
-            type: string
-            description: end date of applications, must be used with start_date
-        - name: applicant
-          in: query
-          required: false
-          schema:
-            type: string
-            description: applicant wallet address
-        - name: user_wallet
-          in: query
-          required: false
-          schema:
-            type: string
-            description: target user wallet address
-        - name: state
-          in: query
-          required: false
-          schema:
-            type: string
-            description: state of applications
-            enum: [ open, approved, rejected, processing, completed ]
-
-      responses:
-        '200':
-          description: OK
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  page:
-                    type: number
-                  size:
-                    type: number
-                  total:
-                    type: number
-                  rows:
-                    type: array
-                    items:
-                      $ref: '#/components/schemas/ApplicationJointRecord'
-
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: create new application
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: array
-              items:
-                $ref: "#/components/schemas/NewApplicationRequest"
-      responses:
-        '201':
-          description: Created
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-
-  /apps_applicants:
-    get:
-      tags: [ applications ]
-      description: get applicants of all applications
-      responses:
-        200:
-          description: applicant wallet and username (if have)
-          content:
-            "application/json":
-              schema:
-                type: array
-                items:
-                  type: object
-                  properties:
-                    wallet:
-                      type: string
-                      description: wallet of applicant user
-                    name:
-                      type: string
-                      description: name of applicant user, and will return "" if not set
-
-  /apps_approve:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: approve multiple applications
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: array
-              items:
-                type: string
-                description: application ID
-      responses:
-        '200':
-          description: all applications are marked as approved
-        '500':
-          description: some applications are processing error
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/ErrorResponse"
-
-  /get_applications_upload_template:
-    get:
-      tags: [ applications ]
-      description: get upload template
-      parameters:
-        - name: lang
-          in: query
-          description: language selector for the header
-          schema:
-            enum: [ zh, en ]
-      responses:
-        200:
-          description: template downloaded
-
-  /download_applications:
-    get:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: generate file with requested applications and send to invoker
-      parameters:
-        - name: format
-          in: query
-          description: specify file format for downloaded content
-          schema:
-            type: string
-            enum: [ csv, json ]
-            default: csv
-        - name: ids
-          in: query
-          description: ids of applications should be downloaded, the ids are concat by comma
-          example: 1,2,3,4,5
-        - name: lang
-          in: query
-          description: language selector for the header
-          schema:
-            enum: [ zh, en ]
-      responses:
-        200:
-          description: file downloaded
-
-  /applications/export:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: Export application list that will be processed outside the system
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: array
-              items:
-                type: string
-                description: application id
-      responses:
-        200:
-          description: >
-            Chosen applications has been exported successfully. All the exported application will be marked as
-            processing state and no new export application can be issued if there are still records in processing state
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-                  data:
-                    $ref: "#/components/schemas/ApplicationJointRecord"
-
-  /apps_reject:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: reject multiple applications
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: array
-              items:
-                type: number
-                description: id for application will be rejected
-
-      responses:
-        '200':
-          description: all applications are marked as rejected
-        '500':
-          description: some applications are processing error
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/ErrorResponse"
-
-  /apps_process:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: process multiple applications
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: array
-              items:
-                type: string
-                description: id for application will be changed to processing state
-
-      responses:
-        '200':
-          description: all applications are marked as rejected
-        '500':
-          description: some applications are processing error
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/ErrorResponse"
-
-  /apps_complete:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: >
-        complete multiple applications. Only application in processing mode can be completed,
-        so this API call does not require application IDs
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                message:
-                  type: string
-                  description: complete message, e.g. transactions ID for the rewards
-      responses:
-        '200':
-          description: all applications are marked as completed
-        '500':
-          description: some applications are processing error
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/ErrorResponse"
-
-  /applications/{id}:
-    get:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: Show application detail
-      responses:
-        '200':
-          description: OK
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/ApplicationJointRecord"
-
-  /applications/{id}/approve:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: approve the application
-      responses:
-        '200':
-          description: application has been approved
-
-  /applications/{id}/complete:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: mark the application to be completed
-      responses:
-        '200':
-          description: application has been marked as completed
-
-  /applications/{id}/reject:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: reject the application
-      responses:
-        '200':
-          description: application has been rejected
-
-  /applications/{id}/process:
-    post:
-      tags: [ applications ]
-      security:
-        - bearerAuth: [ ]
-      description: process the application
-      responses:
-        '200':
-          description: application has been rejected
-
-  /events:
-    get:
-      tags: [ event ]
-      summary: List all events
-      parameters:
-        - name: page
-          in: query
-          description: which page
-          schema:
-            type: number
-          required: false
-        - name: size
-          in: query
-          description: size of each page
-          schema:
-            type: number
-        - name: sort_field
-          in: query
-          schema:
-            type: string
-        - name: sort_order
-          in: query
-          schema:
-            type: string
-            enum: [ asc, desc ]
-        - name: state
-          in: query
-          schema:
-            type: string
-            enum: [ preparing, inprogress, completed ]
-      responses:
-        '200':
-          description: OK
-          content:
-            "application/json":
-              schema:
-                type: object
-                properties:
-                  page:
-                    type: number
-                  size:
-                    type: number
-                  total:
-                    type: number
-                  rows:
-                    type: array
-                    items:
-                      $ref: "#/components/schemas/EventResponse"
-    post:
-      security:
-        - bearerAuth: [ ]
-      tags: [ event ]
-      summary: create event
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              $ref: "#/components/schemas/EventCreateRequest"
-      responses:
-        '201':
-          description: event created
-
-  /my_events:
-    get:
-      security:
-        - bearerAuth: [ ]
-      summary: return events created by login user
-      parameters:
-        - name: page
-          in: query
-          description: which page
-          schema:
-            type: number
-          required: false
-        - name: size
-          in: query
-          description: size of each page
-          schema:
-            type: number
-        - name: sort_field
-          in: query
-          schema:
-            type: string
-        - name: sort_order
-          in: query
-          schema:
-            type: string
-            enum: [ asc, desc ]
-        - name: state
-          in: query
-          schema:
-            type: string
-            enum: [ preparing, inprogress, completed ]
-      responses:
-        '200':
-          description: OK
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/EventResponse"
-
-  /events/{id}:
-    get:
-      tags: [ event ]
-      summary: get detail of single event
-      responses:
-        '200':
-          description: detailed event data
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/EventResponse"
-    put:
-      tags: [ event ]
-      security:
-        - bearerAuth: [ ]
-      summary: update single non started event
-      parameters:
-        - name: title
-          in: query
-          description: title of event
-        - name: content
-          in: query
-          description: content of event
-        - name: start_at
-          in: query
-          description: start timestamp of event, should be later than current time
-        - name: end_at
-          in: query
-          description: end timestamp of event, should be later than current time
-        - name: metadata
-          in: query
-          description: metadata for event, json encoded string
-      responses:
-        '200':
-          description: detailed event data
-          content:
-            "application/json":
-              schema:
-                $ref: "#/components/schemas/EventResponse"
-    delete:
-      tags: [ event ]
-      security:
-        - bearerAuth: [ ]
-      description: |
-        delete event, this is a hidden API that has no frontend interface,
-        need to find some way to guarantee it can only be used internally
-      responses:
-        '200':
-          description: event item deleted
-
-  /url_for_uploading_s3:
-    get:
-      description: Return pre signed upload URL
-      parameters:
-        - name: filename
-          in: query
-          description: filename will be used in s3 storage
-        - name: type
-          in: query
-          description: content type for the file
-          example:
-            - image/jpg
-            - image/png
-            - image/svg+xml
-        - name: entity
-          in: query
-          description: |
-            entity name for this image, which can help to improvement the file structure in S3
-      responses:
-        '200':
-          description: pre signed URL from S3 that can be used to upload
-
-
-  /cityhall/info:
-    get:
-      tags: [ cityhall ]
-      description: show basic info of cityhall, like project detail response
-      responses:
-        '200':
-          description: ok
-          content:
-            'application/json':
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      project:
-                        $ref: '#/components/schemas/Project'
-                      budgets:
-                        type: array
-                        items:
-                          $ref: "#/components/schemas/BudgetRecord"
-
-  /cityhall/update_budget:
-    post:
-      security:
-        - bearerAuth: [ ]
-      tags: [cityhall]
-      description: |
-        update cityhall budget, the remain amount will be updated with amount already used
-      requestBody:
-        content:
-          'application/json':
-            schema:
-              type: object
-              properties:
-                asset_name:
-                  type: string
-                  required: true
-                  description: asset name
-                asset_type:
-                  type: string
-                  required: true
-                  description: asset type, credit or token
-                total_amount:
-                  type: string
-                  required: true
-                  description: total amount of the new budget
-      responses:
-        '200':
-          description: budget has been set successfully
-
-
-  /cityhall/update_members:
-    post:
-      security:
-        - bearerAuth: [ ]
-      tags: [cityhall]
-      requestBody:
-        content:
-          'application/json':
-            schema:
-              type: object
-              properties:
-                'add':
-                  type: array
-                  description: wallet list that should be added as city hall member
-                  items:
-                    type: string
-                'remove':
-                  type: array
-                  description: wallet list that should be added as city hall member
-                  items:
-                    type: string
-      responses:
-        '200':
-          description: member updated successfully, and the new city hall data is returned
-          content:
-            'application/json':
-              schema:
-                type: object
-                properties:
-                  code:
-                    type: number
-                  msg:
-                    type: string
-                  data:
-                    type: object
-                    properties:
-                      project:
-                        $ref: '#/components/schemas/Project'
-                      budgets:
-                        type: array
-                        items:
-                          $ref: "#/components/schemas/BudgetRecord"
-
-  /permission/grant_role:
-    post:
-      description: grant role for specified wallets
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                grants:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/RoleRequest'
-      responses:
-        '200':
-          description: role granted to wallet
-
-  /permission/revoke_role:
-    post:
-      description: grant role for specified wallets
-      requestBody:
-        content:
-          "application/json":
-            schema:
-              type: object
-              properties:
-                revokes:
-                  type: array
-                  items:
-                    $ref: '#/components/schemas/RoleRequest'
-      responses:
-        '200':
-          description: role revoked to wallet
-
-
+                "$ref": "#/components/schemas/SeePASSDataDto"
+      tags:
+      - seepass
+info:
+  title: Profile example
+  description: The profile API description
+  version: '1.0'
+  contact: {}
+tags:
+- name: profile
+  description: ''
+- name: seepass
+  description: ''
+servers: []
 components:
-  securitySchemes:
-
-    bearerAuth:
-      type: http
-      scheme: bearer
-
   schemas:
-    Proposal:
+    SocialNetworkAccount:
       type: object
       properties:
-        id:
+        network:
           type: string
-          description: Proposal ID, prepare to use UUID
-
-    Project:
-      type: object
-      properties:
-        id:
+          description: network of the social network
+          examples:
+          - twitter
+          - discord
+          - mirror
+        identity:
           type: string
-          description: uniq id for project
-        logo:
-          type: string
-          description: logo of the project, can be base64 image or image url
-        name:
-          type: string
-          description: name of the project
-        status:
-          type: string
-          enum: [ open, pending_close, closed ]
-          description: status of the project
-        sponsors:
-          description: project holder, may be one or more user address
-          type: array
-          items:
-            type: string
-        members:
-          description: project member, the value is member ID
-          type: array
-          items:
-            type: string
-            description: user ID
-        proposals:
-          description: proposal IDs
-          type: array
-          items:
-            type: string
-            description: proposal ID
-
-    BudgetRecord:
-      description: Budget record
-      type: object
-      properties:
-        id:
-          type: number
-          description: budget record ID
-        project_id:
-          type: string
-          description: project ID this budget record is attached on
-        name:
-          type: string
-          description: token name for this budget
-        total_amount:
-          type: string
-          description: total amount of the budget
-        remain_amount:
-          type: string
-          description: remain amount of the budget
-        created_at:
-          type: string
-          description: budget record created at time
-        updated_at:
-          type: string
-          description: budget record last update time
-
-    BudgetAuditLog:
-      description: budget change log
-      type: object
-      properties:
-        id:
-          type: string
-          description: uniq id for budget audit log
-        budget_id:
-          type: string
-          description: budget ID that this audit log belongs to
-        timestamp:
-          type: number
-          description: opeation timestamp in millionsecond
-        operator:
-          type: string
-          description: user ID for this operation
-        pre_value:
-          type: number
-          description: value before this action
-        post_value:
-          type: number
-          description: value after this action
-
-    ApplicationJointRecord:
-      description: application record generated by join query
-      type: object
-      properties:
-        application_id:
-          type: number
-          description: application ID
-        entity_name:
-          type: string
-          description: entity type of this application
-          enum: [ project, guild ]
-        created_at:
-          type: string
-          description: when the application is created
-        target_user_wallet:
-          type: string
-          description: target wallet for this new reward, for close_project application, this field is meanless
-        token_asset_name:
-          type: string
-          description: asset name for token
-        token_amount:
-          type: string
-          description: how many token will be sent in this reward
-        credit_asset_name:
-          type: string
-          description: asset name for credit
-        credit_amount:
-          type: string
-          description: how many credit will be sent in this reward
-        budget_source:
-          type: string
-          description: project or guild name that provides this reward
-        status:
-          type: string
-          enum:
-            - open  # new application which is waiting for reviewing
-            - approved  # application has been approved
-            - rejected  # application has been rejected
-            - processing  # application is under processing, e.g. sending transaction on chain
-            - completed # application has been completed
-        submitter_wallet:
-          type: string
-          description: wallet of submitter user
-        submitter_name:
-          type: string
-          description: name of submitter user if set in the db record, or empty string will be returned
-        reviewer_wallet:
-          type: string
-          description: wallet of reviewer user, if the application is in one state, this field should be empty
-        reviewer_name:
-          type: string
-          description: >
-            name of submitter user if set in the db record, or empty string will be returned.
-            Also application in open state will not have this field set
-        transaction_ids:
-          type: string
-          description: transaction IDs for this reward, only shown for completed applications
-
-    User:
-      type: object
-      description: user information
-      properties:
-        id:
-          type: string
-          description: uniq ID for user
-        avatar:
-          type: string
-        discord_url:
-          type: string
-
-    ErrorResponse:
-      type: object
-      properties:
-        code:
-          type: number
-        msg:
-          type: string
-        data:
-          type: object
-          description: detailed data for this error
-          properties:
-            id:
-              type: string
-              description: user id
-            wallet:
-              type: string
-              description: user wallet address
-            name:
-              type: string
-              description: user name
-            avatar:
-              type: string
-              description: user avatar string or url
-            email:
-              type: string
-              description: user email
-            wechat:
-              type: string
-              description: user wechat profile name
-            discord_profile:
-              type: string
-            twitter_profile:
-              type: string
-            google_profile:
-              type: string
-            mirror:
-              type: string
-            created_at:
-              type: string
-            updated_at:
-              type: string
-            assets:
-              type: array
-              items:
-                type: object
-                properties:
-                  id:
-                    type: number
-                    description: asset record ID
-                  asset_name:
-                    type: string
-                  asset_type:
-                    type: string
-                    enum: [ credit, token ]
-                    description: asset type of this record, should be credit or token
-                  user_wallet:
-                    type: string
-                    description: user wallet for this record
-                  dealt_amount:
-                    type: string
-                    description: amount already saved to user wallet
-                  processing_amount:
-                    type: string
-                    description: amount still under processing state
-                  created_at:
-                    type: string
-                  updated_at:
-                    type: string
-
-    UserRewardRecord:
-      type: object
-      description: reward record for user
-      properties:
-        id:
-          type: string
-          description: uniq id for this reward record
-        user_id:
-          type: string
-          description: user id
-        entity_id:
-          type: string
-          description: record that related to this reward
-        state:
-          type: string
-          enum: [ pending_review, processing, completed ]
-          description: state of this reward
-        reward_type:
-          type: string
-          description: type of this reward, `credit` or <token name>
-        reward_amount:
-          type: string
-          description: amount of this reward
-        created_at:
-          type: number
-          description: timesatmp this reward record created
-        updated_at:
-          type: number
-          description: timesatmp this reward record updated
-
-    LoginRequest:
+          description: uniq id or link for user in the network
+      required:
+      - network
+      - identity
+    ShowProfileDto:
       type: object
       properties:
         wallet:
           type: string
-          required: true
-        timestamp:
-          type: number
-          required: true
-        sign:
+          description: Wallet of the user
+        nickname:
           type: string
-          required: true
-
-    LoginResp:
-      type: object
-      properties:
-        token:
+          description: Nick name of the user
+        bio:
           type: string
-        tokenExp:
-          type: number
-          description: expiration timestamp for token
-        user:
-          $ref: "#/components/schemas/User"
-
-    UpdateUserRequest:
+          description: Brief information of user
+        sns_name:
+          type: string
+          description: sns name of the user
+        avatar:
+          type: string
+          description: avatar image link address for the user
+        email:
+          type: string
+          description: email address of user
+        snRecords:
+          description: Social network records for the user
+          default: []
+          type: array
+          items:
+            "$ref": "#/components/schemas/SocialNetworkAccount"
+      required:
+      - wallet
+    TokenData:
       type: object
       properties:
         name:
           type: string
-        avatar:
+        token_id:
+          type: string
+        token_amount:
+          type: string
+        contract_addr:
+          type: string
+        contract_type:
+          type: string
+        image_uri:
+          type: string
+      required:
+      - token_id
+      - token_amount
+      - contract_addr
+      - contract_type
+      - image_uri
+    SeePASSDataDto:
+      type: object
+      properties:
+        sns:
+          type: string
+        nickname:
+          type: string
+        bio:
           type: string
         email:
           type: string
-        discordProfile:
+        wallet:
           type: string
-        twitterProfile:
+        avatar:
           type: string
-        GoogleProfile:
-          type: string
-
-    NewProjectRequest:
-      type: object
-      properties:
-        logo:
-          type: string
-          description: logo URL or b64 encoded image
-        name:
-          type: string
-          description: project name
-        sponsors:
+        roles:
           type: array
-          description: sponsors address
           items:
             type: string
-            description: user wallet address
-        members:
+        scr:
+          type: object
+          properties:
+            amount:
+              required: true
+              type: string
+            contract_addr:
+              required: true
+              type: string
+        level:
+          type: object
+          properties:
+            current_lv:
+              required: true
+              type: string
+            next_lv:
+              required: true
+              type: string
+            scr_to_next_lv:
+              required: true
+              type: string
+            upgrade_percent:
+              required: true
+              type: string
+        seed:
           type: array
-          description: members address
           items:
-            type: string
-            description: user wallet address
-        proposals:
-          type: array
-          description: proposals address
-          items:
-            type: string
-            description: proposal address
-        budgets:
+            "$ref": "#/components/schemas/TokenData"
+        sbt:
           type: array
           items:
             type: object
-            properties:
-              name:
-                type: string
-                description: budget asset name
-              total_amount:
-                type: string
-                description: budget amount
-
-    NewApplicationRequest:
-      type: object
-      properties:
-        type:
-          type: string
-          enum: [ close_project, new_reward ]
-        entity:
-          type: string
-          enum: [ project, guild ]
-          description: which entity this application is used for
-        entity_id:
-          type: string
-          description: entity ID for this application
-        target_user_wallet:
-          type: string
-          description: which account should this reward be sent to
-        token_asset_name:
-          type: string
-          description: asset name for token
-        token_amount:
-          type: string
-          description: how many token will be sent in this reward
-        credit_asset_name:
-          type: string
-          description: asset name for credit
-        credit_amount:
-          type: string
-          description: how many SeeDAO credit will be sent in this reward
-        detailed_type:
-          type: string
-          description: detailed type of the application, e.g. 酬劳
-        comment:
-          type: string
-          description: other comment of this application
-
-    TreasuryAssetResponse:
-      type: object
-      properties:
-        id:
-          type: number
-          description: treasury asset record ID
-        quarter_num:
-          type: string
-          description: quarter number, in format yyyy0[1234]
-        credit_total_amount:
-          type: string
-          description: total credit amount
-        credit_remain_amount:
-          type: string
-          description: remain credit amount
-        token_total_amount:
-          type: string
-          description: total token amount
-        token_remain_amount:
-          type: string
-          description: remain token amount
-
-    EventCreateRequest:
-      type: object
-      properties:
-        cover_img:
-          type: string
-          description: cover image url
-        title:
-          type: string
-          description: title of image
-        content:
-          type: string
-          description: detailed content of image
-        start_at:
-          type: number
-          description: start timestamp of this event
-        end_at:
-          type: number
-          required: false
-          description: |
-            end timestamp of event, if not given the start_at time wil be used for this field
-        metadata:
-          type: string
-          description: JSON encoded various fields, will be saved to DB without change
-
-    EventResponse:
-      type: object
-      properties:
-        id:
-          type: string
-          description: uniq event id
-        cover_img:
-          type: string
-          description: cover image URL
-        title:
-          type: string
-          description: event title
-        content:
-          type: string
-          description: detailed content of the event
-        start_at:
-          type: number
-          description: start timestamp in second format of this event
-        end_at:
-          type: number
-          description: end timestamp in second format of this event
-        metadata:
-          type: object
-          description: various metadata of this event
-
-    RoleRequest:
-      type: object
-      properties:
-        wallet:
-          type: string
-        role:
-          type: string
-
-
-
-
+        social_accounts:
+          type: array
+          items:
+            "$ref": "#/components/schemas/SocialNetworkAccount"
+      required:
+      - sns
+      - wallet
+      - avatar
+      - roles
+      - scr
+      - level
+      - seed
+      - sbt
+      - social_accounts
