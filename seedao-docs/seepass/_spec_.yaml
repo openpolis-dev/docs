@@ -40,10 +40,26 @@ paths:
       tags:
       - seepass
 info:
-  title: SeePASS API
+  title: SeePASS API Spec
   description: |
-    This document describes API endpoints, request and response schema exported by SeePASS service.
-    The 
+    This document provides a comprehensive overview of the API endpoints,
+    request structures, and response schemas exported by the SeePASS service.
+    SeePASS is a powerful service that implements the SeeDAO profile protocol,
+    enabling users to access their SeeDAO data conveniently from a single endpoint.
+
+    The SeePASS service encompasses two distinct scopes of data: profile and seepass.
+    These scopes provide developers with different sets of information,
+    allowing them to tailor their requests based on their specific requirements.
+
+    The profile endpoint focuses on retrieving user data that is typically presented within the SeeDAO App.
+    This includes essential details such as the user's nickname,
+    avatar link, email address, and social media account information. 
+
+    On the other hand, the seepass endpoint offers a broader range of data,
+    including information stored on the blockchain. This encompasses assets such as SEED NFTs, SBT,
+    and other relevant on-chain data. Developers who require access to blockchain-specific 
+    information can leverage the seepass endpoint to retrieve and utilize this data within their applications.
+
   version: '1.0'
   contact: {}
 tags:
