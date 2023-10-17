@@ -148,12 +148,8 @@ const config = {
           //   ],
           // },
           {
-            title: "Community",
+            title: "Connect",
             items: [
-              {
-                label: "SEED Collection",
-                href: "https://opensea.io/collection/seedaoseed",
-              },
               {
                 label: "Discord",
                 href: "https://discord.gg/seedao",
@@ -165,12 +161,16 @@ const config = {
             ],
           },
           {
-            title: "More",
+            title: "Community",
             items: [
               // {
               //   label: "Blog",
               //   to: "/blog",
               // },
+              {
+                label: "SEED Collection",
+                href: "https://opensea.io/collection/seedaoseed",
+              },
               {
                 label: "GitHub",
                 href: "https://github.com/Taoist-Labs/docs",
