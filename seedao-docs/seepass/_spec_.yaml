@@ -1,0 +1,187 @@
+---
+openapi: 3.0.0
+paths:
+  "/profile/{userAddr}":
+    get:
+      operationId: ProfileController_get
+      parameters:
+      - name: userAddr
+        required: true
+        in: path
+        description: user address, should be valid wallet or sns name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/ShowProfileDto"
+      tags:
+      - profile
+  "/seepass/{userAddr}":
+    get:
+      operationId: SeepassController_get
+      parameters:
+      - name: userAddr
+        required: true
+        in: path
+        description: user address, should be valid wallet or sns name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                "$ref": "#/components/schemas/SeePASSDataDto"
+      tags:
+      - seepass
+info:
+  title: SeePASS API
+  description: |
+    This document describes API endpoints, request and response schema exported by SeePASS service.
+    The 
+  version: '1.0'
+  contact: {}
+tags:
+- name: profile
+  description: ''
+- name: seepass
+  description: ''
+servers: []
+components:
+  schemas:
+    SocialNetworkAccount:
+      type: object
+      properties:
+        network:
+          type: string
+          description: network of the social network
+          examples:
+          - twitter
+          - discord
+          - mirror
+        identity:
+          type: string
+          description: uniq id or link for user in the network
+      required:
+      - network
+      - identity
+    ShowProfileDto:
+      type: object
+      properties:
+        wallet:
+          type: string
+          description: Wallet of the user
+        nickname:
+          type: string
+          description: Nick name of the user
+        bio:
+          type: string
+          description: Brief information of user
+        sns_name:
+          type: string
+          description: sns name of the user
+        avatar:
+          type: string
+          description: avatar image link address for the user
+        email:
+          type: string
+          description: email address of user
+        snRecords:
+          description: Social network records for the user
+          default: []
+          type: array
+          items:
+            "$ref": "#/components/schemas/SocialNetworkAccount"
+      required:
+      - wallet
+    TokenData:
+      type: object
+      properties:
+        name:
+          type: string
+        token_id:
+          type: string
+        token_amount:
+          type: string
+        contract_addr:
+          type: string
+        contract_type:
+          type: string
+        image_uri:
+          type: string
+      required:
+      - token_id
+      - token_amount
+      - contract_addr
+      - contract_type
+      - image_uri
+    SeePASSDataDto:
+      type: object
+      properties:
+        sns:
+          type: string
+        nickname:
+          type: string
+        bio:
+          type: string
+        email:
+          type: string
+        wallet:
+          type: string
+        avatar:
+          type: string
+        roles:
+          type: array
+          items:
+            type: string
+        scr:
+          type: object
+          properties:
+            amount:
+              required: true
+              type: string
+            contract_addr:
+              required: true
+              type: string
+        level:
+          type: object
+          properties:
+            current_lv:
+              required: true
+              type: string
+            next_lv:
+              required: true
+              type: string
+            scr_to_next_lv:
+              required: true
+              type: string
+            upgrade_percent:
+              required: true
+              type: string
+        seed:
+          type: array
+          items:
+            "$ref": "#/components/schemas/TokenData"
+        sbt:
+          type: array
+          items:
+            type: object
+        social_accounts:
+          type: array
+          items:
+            "$ref": "#/components/schemas/SocialNetworkAccount"
+      required:
+      - sns
+      - wallet
+      - avatar
+      - roles
+      - scr
+      - level
+      - seed
+      - sbt
+      - social_accounts
