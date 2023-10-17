@@ -1,3 +1,5 @@
+[![Deploy to github page](https://github.com/Taoist-Labs/docs/actions/workflows/deploy.yml/badge.svg)](https://github.com/Taoist-Labs/docs/actions/workflows/deploy.yml)
+
 # The doc site of SeeDAO Polis
 
 SeeDAO Polis Docs contains everything about the SeeDAO Polis Project. You can check and find all the questions regarding the SeeDAO Polis Project. 
