@@ -1,6 +1,10 @@
 ---
-sidebar_position: 1
+sidebar_position: 0
 ---
+
+# SNS JS
+
+SNS JS is the JavaScript API wrapper for [SeeDAO Name Service](https://github.com/Taoist-Labs/sns).
 
 # Install
 
