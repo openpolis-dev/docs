@@ -181,6 +181,11 @@ const config = {
         ],
         copyright: `Copyright © ${new Date().getFullYear()} SeeDAO.`,
       },
+      algolia: {
+        appId: 'JX2ACBTOPK',
+        apiKey: '2b834afa1285b28066e5ef89e6fa15d6',
+        indexName: 'seedao',
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
