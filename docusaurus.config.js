@@ -6,7 +6,7 @@ const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "SeeDAO Polis Docs",
+  title: "SeeDAO Polis",
   tagline: "Builders are cool",
   favicon: "img/favicon.ico",
 
@@ -18,8 +18,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "Taoist Labs", // Usually your GitHub org/user name.
-  projectName: "SeeDAO Docs", // Usually your repo name.
+  organizationName: "Taoist-Labs", // Usually your GitHub org/user name.
+  projectName: "docs", // Usually your repo name.
 
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
@@ -64,7 +64,7 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           editUrl:
-            "https://github.com/cloud-annotations/docusaurus-openapi/edit/main/demo/",
+            "https://github.com/Taoist-Labs/docs/",
         },
         blog: false,
         theme: {
@@ -107,9 +107,9 @@ const config = {
       // Replace with your project's social card
       image: "img/docusaurus-social-card.jpg",
       navbar: {
-        title: "SeeDAO Polis Docs",
+        title: "SeeDAO Polis",
         logo: {
-          alt: "My Site Logo",
+          alt: "SeeDAO Logo",
           src: "img/logo.png",
         },
         items: [
@@ -130,8 +130,9 @@ const config = {
           },
           {
             href: "https://github.com/Taoist-Labs/docs",
-            label: "GitHub",
             position: "right",
+            className: "header-github-link",
+            "aria-label": "GitHub repository",
           },
         ],
       },

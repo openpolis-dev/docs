@@ -1,8 +1,11 @@
 ---
+id: intro
+title: 🖐️ Intro
+sidebar_label: Intro
 sidebar_position: 0
 ---
 
-# Introduction
+## Overview
 
 SeeDAO Profile Protocol Application is also named as SeePASS.
 
