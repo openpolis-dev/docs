@@ -2,6 +2,6 @@
 sidebar_position: 1
 ---
 
-# SNS Go
+# Introduction
 
 SNS Go is the Golang API wrapper for [SeeDAO Name Service](https://github.com/Taoist-Labs/sns).
