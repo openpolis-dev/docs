@@ -11,6 +11,8 @@ SeeDAO Name Service (SNS) is a decentralized name service based on blockchain. I
 
 We use SNS to identify users in the SeeDAO community, making community communication smoother and user experience better. SNS is also associated with SeePASS to show the various achievements of community members.
 
+Top-level domain of SNS is `.seedao`, for example, `baiyu.seedao`.
+
 ## Current Status
 
 > !! SNS is now in the internal testing phase, and community members are not allowed to register SNS by themselves.
