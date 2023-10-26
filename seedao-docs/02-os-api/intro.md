@@ -1,6 +1,6 @@
 ---
 id: intro
-title: 🖐️ Intro
+title: Introducation
 sidebar_label: Intro
 sidebar_position: 0
 ---
