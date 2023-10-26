@@ -1,6 +1,6 @@
 ---
 id: history
-title: 📖 The History
+title: 📙 The History
 sidebar_label: history
 sidebar_position: 2
 ---
