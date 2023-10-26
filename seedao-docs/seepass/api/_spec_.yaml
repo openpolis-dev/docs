@@ -1,5 +1,8 @@
 ---
 openapi: 3.0.0
+servers:
+  - url: "https://test-seepass-api.seedao.tech/"
+    description: "dev env for the API"
 paths:
   "/profile/{userAddr}":
     get:
@@ -54,7 +57,6 @@ tags:
   description: ''
 - name: seepass
   description: ''
-servers: []
 components:
   schemas:
     SocialNetworkAccount:
