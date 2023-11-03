@@ -5,8 +5,23 @@ sidebar_label: Release Updates
 sidebar_position: 1
 ---
 
-## Release Updates
+There are three versions of SeeDAO App.
+The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
+The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
+The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
 
+Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
+Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
+Development Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
+
+Notes:
+- The current versions only support desktop web version, mobile will be supported in the coming versions.
+- You need to click "Allow" when the pop-up window allows notification to receive corresponding notification.
+- JoyID is still in beta, you can experience it, but it is not recommended as your main wallet.
+- The datasets in preview version and dev version are subject to change and update at any time.
+- The code repo is open source and can be accessed on Github.
+
+## Release Updates
 
 ### Alpha 0.1.2 - 3 Nov 2023
 
@@ -30,22 +45,6 @@ Changelog:
 - Add the function to audit the closure of projects.
 - Increase the function to audit the closure of guilds
 
-There are currently three versions of SeeDAO App, namely the release version, preview version and development version.  
-The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
-The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
-
-Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
-Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
-
-Notes:
-- The current versions only support desktop web version, mobile will be supported in the coming versions.
-- You need to click "Allow" when the pop-up window allows notification to receive corresponding notification.
-- JoyID is still in beta, you can experience it, but it is not recommended as your main wallet.
-- The datasets in preview version and dev version are subject to change and update at any time.
-- The code repo is open source and can be accessed on Github.
-
 
 ### Alpha 0.1.1 - 28 Oct 2023
 
@@ -57,22 +56,6 @@ Changelog:
 - Replace part of the UI of the new version
 - Add Community Resource Request List
 - Added Bounty Pub
-
-There are currently three versions of SeeDAO App, namely the release version, preview version and development version.  
-The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
-The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
-
-Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
-Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
-
-Notes:
-- The current versions only support desktop web version, mobile will be supported in the coming versions.
-- You need to click "Allow" when the pop-up window allows notification to receive corresponding notification.
-- JoyID is still in beta, you can experience it, but it is not recommended as your main wallet.
-- The datasets in preview version and dev version are subject to change and update at any time.
-- The code repo is open source and can be accessed on Github.
 
 ### Beta v0.1.0 - 23 Oct 2023
 
@@ -94,19 +77,3 @@ Contents:
 - SeeDAO application can be added to desktop
 - Push notification to all staff
 - Built-in feedback system
-
-There are currently three versions of SeeDAO App, namely the release version, preview version and development version.  
-The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
-The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
-
-Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)   
-Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
-
-Notes:
-- The current versions only support desktop web version, mobile will be supported in the coming versions.
-- You need to click "Allow" when the pop-up window allows notification to receive corresponding notification.
-- JoyID is still in beta, you can experience it, but it is not recommended as your main wallet.
-- The datasets in preview version and dev version are subject to change and update at any time.
-- The code repo is open source and can be accessed on Github.
