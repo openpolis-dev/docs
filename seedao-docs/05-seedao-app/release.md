@@ -5,7 +5,9 @@ sidebar_label: Release Updates
 sidebar_position: 1
 ---
 
-There are three versions of SeeDAO App.
+## Release Updates
+
+There are three versions of SeeDAO App.  
 The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
 The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
 The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
@@ -21,7 +23,6 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
-## Release Updates
 
 ### Alpha 0.1.2 - 3 Nov 2023
 
