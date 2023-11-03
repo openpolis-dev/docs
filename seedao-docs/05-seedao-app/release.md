@@ -30,14 +30,14 @@ Changelog:
 - Add the function to audit the closure of projects.
 - Increase the function to audit the closure of guilds
 
-There are currently three versions of SeeDAO App, namely the release version, preview version and development version.
-The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.
-The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.
+There are currently three versions of SeeDAO App, namely the release version, preview version and development version.  
+The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
+The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
+The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
 
-Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)
-Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)
+Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
+Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
+Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
 
 Notes:
 - The current versions only support desktop web version, mobile will be supported in the coming versions.
@@ -58,14 +58,14 @@ Changelog:
 - Add Community Resource Request List
 - Added Bounty Pub
 
-There are currently three versions of SeeDAO App, namely the release version, preview version and development version.
-The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.
-The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.
+There are currently three versions of SeeDAO App, namely the release version, preview version and development version.  
+The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
+The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
+The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
 
-Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)
-Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)
+Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
+Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
+Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
 
 Notes:
 - The current versions only support desktop web version, mobile will be supported in the coming versions.
@@ -95,14 +95,14 @@ Contents:
 - Push notification to all staff
 - Built-in feedback system
 
-There are currently three versions of SeeDAO App, namely the release version, preview version and development version.
-The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.
-The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.
+There are currently three versions of SeeDAO App, namely the release version, preview version and development version.  
+The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
+The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
+The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
 
-Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)
-Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)
+Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
+Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)   
+Dev Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
 
 Notes:
 - The current versions only support desktop web version, mobile will be supported in the coming versions.
