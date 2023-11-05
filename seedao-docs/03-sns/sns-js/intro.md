@@ -8,7 +8,9 @@ SNS JS is the JavaScript API wrapper for [SeeDAO Name Service](https://github.co
 
 # Install
 
-#### 1. npm
+[![npm version](https://badge.fury.io/js/@seedao%2Fsns-js.svg)](https://badge.fury.io/js/@seedao%2Fsns-js)
+
+#### 1. npm package
 
 Install:
 
@@ -23,8 +25,6 @@ import sns from "@seedao/sns-js";
 
 // then you can use `sns.Xxx()` to call functions, for example `const n = await sns.resolve("abc.seedao")`
 ```
-
-Find latest version at: [npmjs.com](https://www.npmjs.com/package/@seedao/sns-js?activeTab=versions)
 
 #### 2. Browser with `iife` format
 
