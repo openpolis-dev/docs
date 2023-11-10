@@ -23,6 +23,29 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha 0.1.3 - 10 Nov 2023
+
+After one week of development, SeeDAO App Alpha v0.1.3 is released.
+The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Add Snapshot for SEED.
+- Add function of selecting SeeDAO Node.
+- Add poll info.
+- Embed Tally form for applications.
+- Add project creating, guild creating, project closing, guild closing, SCR Application etc.
+- Adjust the member management for projects and guilds.
+- Ajust profile page.
+- Adjust Loading bar.
+- Adjust community calendar.
+- Adjust Pub UI.
+- Fix change avatar issue.
+- Upgrade JoyID to mainnet version.
+- Adjust the application template for SCR.
+- Add total assets for application form.
+- Adjust the rule of batch application request approval.
+- Adjust list of projects/guilds.
+- Adjust the detail page for projects/guilds.
 
 ### Alpha 0.1.2 - 3 Nov 2023
 
