@@ -23,6 +23,40 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.2.0 - 15 Nov 2023
+
+After one week of development, SeeDAO App Beta v0.2.0 is released.
+The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Add node qualification calculation
+- Added Bounty Pub
+- Add community resource request list
+- Add proposal information display and poll info.
+- Add the function to audit the closure of projects.
+- Add the function of applying for registration of SCR points.
+- Add the function of reviewing SCR points registration information by the city hall.
+- Add more filter option to listing AppBundle endpoint
+- Add total assets for application form.
+- Add SCR, SEED, SBT and social networks to Profile.
+- Add application process for projects, unions, incubators, media resources, etc.
+- Add function of selecting SeeDAO Node.
+- Embed Tally form for applications.
+- Add project creating, guild creating, project closing, guild closing, SCR Application etc.
+- Replace the UI style of the new version
+- Increase the function to audit the closure of guilds
+- Update SeeU Network activity display
+- Optimize the display of community calendar
+- Updated Bounty Tavern to Tavern, optimized display information and UI.
+- Adjust loading bar style
+- Adjust the member management for projects and guilds.
+- Fix change avatar issue.
+- Adjust profile page and integrate SeePASS API.
+- Adjust the rule of batch application request approval.
+- Adjust list of projects/guilds.
+- Adjust the detail page for projects/guilds.
+
+
 ### Alpha 0.1.3 - 10 Nov 2023
 
 After one week of development, SeeDAO App Alpha v0.1.3 is released.
