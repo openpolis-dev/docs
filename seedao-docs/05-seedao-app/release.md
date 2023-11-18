@@ -19,9 +19,29 @@ Development Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/
 Notes:
 - The current versions only support desktop web version, mobile will be supported in the coming versions.
 - You need to click "Allow" when the pop-up window allows notification to receive corresponding notification.
-- JoyID is still in beta, you can experience it, but it is not recommended as your main wallet.
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
+
+
+### Alpha v0.2.1 - 17 Nov 2023
+
+SeeDAO App Alpha v0.2.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Add cityhall architecture for display.
+- Added the function of adjusting cityhall members.
+- Added total assets display and application instructions on points registration approval page.
+- Optimize the display of project/guild details.
+- Fixed a list style problem.
+- Expand and collapse buttons in the menu bar are switched according to the status.
+- Optimize loading.
+- Optimize the display of Seed and SBT in profile.
+- Optimize the speed of displaying data in tables.
+- Optimize the style of the popup window for reviewing resources and the prompt of login status.
+- Modify toast style.
+- Optimize the activity page.
+- Fix the error of displaying the consumption data of the current quarter on the treasury page.
+- Fix an error in the sorting of the audit list of project closure requests.
 
 ### Beta v0.2.0 - 15 Nov 2023
 
