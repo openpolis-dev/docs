@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -91,7 +91,7 @@
     import {
       SeeDAORegistrarControllerContract,
       PublicResolverContract,
-    } from "https://cdn.jsdelivr.net/npm/@seedao/sns-js-advance@0.2.0/dist/esm/index.min.js";
+    } from "https://cdn.jsdelivr.net/npm/@seedao/sns-js-advance@0.2.5/dist/esm/index.min.js";
 
     let currentAccount = null;
     let mustChainId = "0xaa36a7";
@@ -168,26 +168,84 @@
     // ------ ------ ------ ------ ------ ------ ------ ------ ------
     // ------ ------ ------ ------ ------ ------ ------ ------ ------
 
+    const controller =
+      SeeDAORegistrarControllerContract.atSepolia().connect(signer);
+    const resolver = PublicResolverContract.atSepolia().connect(provider);
+
+    let step = 1;
+
     document
       .getElementById("register_button")
       .addEventListener("click", register);
     async function register() {
       const btn = document.getElementById("register_button");
-      btn.innerText = "Query Available...";
-      btn.disabled = "disabled";
-
       const span = document.getElementById("register_span");
-      span.innerText = "";
-
-      const controller =
-        SeeDAORegistrarControllerContract.atSepolia().connect(signer);
-      const resolver = PublicResolverContract.atSepolia().connect(provider);
-
       const name = document.getElementById("register_input").value;
-      const available = await controller.available(name);
-      if (available) {
-        span.innerText = name + ".seedao" + " is available";
-        btn.innerText = "Register...";
+
+      if (step == 1) {
+        btn.innerText = "Query Available...";
+        btn.disabled = "disabled";
+
+        span.innerText = "";
+
+        const available = await controller.available(name);
+        if (available) {
+          span.innerText = name + ".seedao" + " is available";
+          btn.innerText = "Commitment...";
+
+          try {
+            // 1 make commitment
+            const commitment = await controller.makeCommitment(
+              name,
+              signer.address,
+              resolver.target.toString(),
+              ethers.encodeBytes32String("123aa321")
+            );
+            const tx = await controller.commit(commitment);
+
+            // 2 update text
+            span.innerHTML =
+              span.innerText +
+              "<br />" +
+              'txHash: <a href="https://sepolia.etherscan.io/tx/' +
+              tx.hash +
+              '" target="_blank">' +
+              tx.hash +
+              "</a>";
+
+            btn.innerText = "Waiting Tx confirm...";
+
+            // 3 wait tx done
+            await tx.wait();
+
+            span.innerHTML =
+              span.innerHTML +
+              "<br />" +
+              "Tx confirmed, next waiting for 60s...";
+            btn.innerText = "Waiting...";
+          } catch (e) {
+            span.innerHTML =
+              span.innerText + "<br />" + "Tx failed: " + e.message;
+
+            btn.innerText = "Register";
+            btn.disabled = "";
+          }
+
+          // ----------> <----------
+          setTimeout(() => {
+            span.innerHTML = span.innerHTML + "<br />" + "Start register...";
+            btn.innerText = "Register...";
+            btn.disabled = "";
+            step = 2;
+          }, 60000);
+          // ----------> <----------
+        } else {
+          span.innerText = name + ".seedao" + " is not available";
+          btn.innerText = "Register";
+          btn.disabled = "";
+        }
+      } else if (step == 2) {
+        btn.disabled = "disabled";
 
         try {
           // 1 register
@@ -195,6 +253,7 @@
             name,
             signer.address,
             resolver.target.toString(),
+            ethers.encodeBytes32String("123aa321")
           );
 
           // 2 update text
@@ -214,15 +273,13 @@
 
           span.innerHTML =
             span.innerHTML + "<br />" + "Tx confirmed, register success!";
+
+          step = 1;
         } catch (e) {
           span.innerHTML =
             span.innerText + "<br />" + "Tx failed: " + e.message;
         }
 
-        btn.innerText = "Register";
-        btn.disabled = "";
-      } else {
-        span.innerText = name + ".seedao" + " is not available";
         btn.innerText = "Register";
         btn.disabled = "";
       }
