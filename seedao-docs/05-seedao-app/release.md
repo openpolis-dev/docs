@@ -23,6 +23,20 @@ Notes:
 - The code repo is open source and can be accessed on Github.
 
 
+### Alpha v0.2.2 - 24 Nov 2023
+
+SeeDAO App Alpha v0.2.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Support mobile version.
+- SIP Link check.
+- Optimize Treasury page, increase loading speed.
+- Update SNS SDK, increase the speed of SNS.
+- Update the way to get SEED data, speed up all the data fetching for SEED.
+- Update SCR application, add import and export.
+- Update Node calculation
+- Update timestamp field for all data, supporting multi timezone.
+
 ### Alpha v0.2.1 - 17 Nov 2023
 
 SeeDAO App Alpha v0.2.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
