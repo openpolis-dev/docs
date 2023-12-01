@@ -22,6 +22,30 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.2.3 - 1 Dec 2023
+
+SeeDAO App Alpha v0.2.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Add SNS registration and switching to use SNS (unipass does not support the current test network)
+- Add filtering and searching for vault assets list.
+- Add detailed_type query support in application list.
+- Return project and guild ID and type fields in the application list.
+- Multi-user query interface returns SBT and SEED information.
+- Add Prometheus Metrics data interface and service status export.
+- Modify the layout of the vault page.
+- Enrich the content of points detail popup window.
+- Modify the way to remove members from projects/guilds
+- Changed the name of the Town Hall member interface to Seasonal Town Hall, and added a link to the governance rules document.
+- Show categorization on the Town Hall governance page, and add an entry point for asset issuance.
+- Fine-tuned the asset release process to prohibit approval during release.
+- Add a detail pop-up window for project closure review
+- Modified the UI of the node qualification trial calculation page.
+- Modify the UI of the personal profile interface.
+- Fix the error of user return in the application list.
+- Fix the error of not setting the audit time correctly when the application is rejected.
+- Add SNS registration and switching to SNS on mobile terminal (unipass does not support the current test network).
+
 
 ### Alpha v0.2.2 - 24 Nov 2023
 
