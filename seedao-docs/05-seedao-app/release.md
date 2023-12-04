@@ -22,6 +22,24 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.2.4 - 4 Dec 2023
+
+SeeDAO App Alpha v0.2.4 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Switch to using the Goerli network.
+- Support UniPass registration/switching for SNS.
+- Optimize login reminders when using the registered SNS feature.
+- Add the Profile component.
+- Fix the issue where newly registered SNS cannot be read in a timely manner.
+- Fix the problem of incomplete content display in the asset distribution record popup.
+- Fix the synchronization issue between application package status and application status in certain cases.
+- Fix the missing data issue in the application and application package list API.
+- Fix the issue on the mobile app where it cannot connect to MetaMask.
+- Fix the problem on the mobile app where the successful minting page does not return correctly.
+- Fix the issue on the mobile app where the popup is not closed after a successful SNS switching transaction.
+- Remove SNS local cache data on the mobile app.
+
 ### Alpha v0.2.3 - 1 Dec 2023
 
 SeeDAO App Alpha v0.2.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
