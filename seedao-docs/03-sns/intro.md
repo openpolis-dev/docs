@@ -15,7 +15,7 @@ Top-level domain of SNS is `.seedao`, for example, `baiyu.seedao`.
 
 ## Current Status
 
-> !! SNS is now in the internal testing phase, and community members are not allowed to register SNS by themselves.
+> 🎉 SNS is available now, please visit [https://app.seedao.xyz/sns](https://app.seedao.xyz/sns) to register your SNS.
 
 ## Features
 
