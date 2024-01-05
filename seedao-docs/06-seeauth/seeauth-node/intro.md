@@ -4,9 +4,9 @@ sidebar_position: 0
 
 ## Overview
 
-For Node backend, validate user with SeeAuth service, and return the user credentials for accessing his/her data.
+For Third-Part Server, validate user with SeeAuth service, and return the user credentials for accessing his/her data.
 
-# Install
+## Install
 
 [![npm version](https://badge.fury.io/js/@seedao%2Fsee-auth.svg)](https://badge.fury.io/js/@seedao%2Fsee-auth)
 
@@ -14,9 +14,9 @@ For Node backend, validate user with SeeAuth service, and return the user creden
 $ npm i @seedao/see-auth
 ```
 
-# Usage
+## Usage
 
-Use `async function auth3rd(recipient: string, seeAuth: SeeAuth): Promise<string>` function to validate user with SeeAuth service, if validate success will return user's wallet address, otherwise throw error.
+Use `async function auth3rd(recipient: string, seeAuth: SeeAuth): Promise<string>` function to authenticate user with SeeAuth service, if validate success this function will return user's wallet address, otherwise throw error.
 
 For example(using [Hono](https://hono.dev/) framework):
 
@@ -45,3 +45,9 @@ app.post("/seeauth", async (c) => {
   }
 });
 ```
+
+## Testing
+
+Open [https://seeauth-web.deno.dev/](https://seeauth-web.deno.dev/) and fill your seeauth api url at **Third-Server-SeeAuth-Endpoint**, and then click the **With SeeAuth** button to test.
+
+![seeauth](https://docs.seedao.tech/img/seeauth.png)
