@@ -16,22 +16,22 @@ $ npm i @seedao/see-auth
 
 ## Usage
 
-Use `async function auth3rd(recipient: string, seeAuth: SeeAuth): Promise<string>` function to authenticate user with SeeAuth service, if validate success this function will return user's wallet address, otherwise throw error.
+Use `async function seeAuth(recipient: string, payload: SeeAuth): Promise<string>` function to authenticate user with SeeAuth service, if validate success this function will return user's wallet address, otherwise throw error.
 
 For example(using [Hono](https://hono.dev/) framework):
 
 ```typescript
 import { Hono } from "hono/mod.ts";
-import { auth3rd, SeeAuth } from "see-auth";
+import { seeAuth, SeeAuth } from "see-auth";
 
 const app = new Hono();
 app.post("/seeauth", async (c) => {
-  // get `SeeAuth` from request body
-  const seeAuth = (await c.req.json()) as SeeAuth;
+  // parse `SeeAuth` object from request body
+  const payload = (await c.req.json()) as SeeAuth;
 
-  // call `auth3rd(...)` function to validate user with SeeAuth service
+  // call `seeAuth(...)` function to validate user with SeeAuth service
   try {
-    const loginWallet = await auth3rd("0x0000000000000000000000000000000000000000", seeAuth);
+    const loginWallet = await seeAuth("0x0000000000000000000000000000000000000000", payload);
     
     return c.json({
       token: "<jwt token>",
