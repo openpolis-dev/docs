@@ -22,6 +22,15 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.0 - 8 Jan 2024
+
+SeeDAO App Alpha v0.4.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Add proposal system
+- SeeDAO podcast added to homepage
+- Optimized wallet connection and SNS trading technology
+
 ### Alpha v0.2.4 - 4 Dec 2023
 
 SeeDAO App Alpha v0.2.4 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
