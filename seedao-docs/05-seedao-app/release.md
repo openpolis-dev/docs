@@ -22,6 +22,27 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.1 - 15 Jan 2024
+
+SeeDAO App Alpha v0.4.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Replaced the link for successful co-building of city-states through SNS registration.
+- Fixed the version missing bug in propsal with multiple edit histories.
+- Updated the style of the voting module.
+- Updated the display of rejection messages when proposals are rejected multiple times.
+- Updated the display and editing of associated proposals in automatically created project/guild detail page.
+- Optimized the opening and collapsing of comment input boxes.
+- Optimized the display of project/guild lists.
+- Fixed some text errors.
+- Added proposal widget for uploading file.
+- Added styles for proposal widgets in web to be displayed in two columns, three columns, or full screen.
+- Added compatibility for proposal widgets on mobile devices.
+- Implemetned the proposal system on mobile devices.
+- Added automated tasks for reward applications.
+- Added loading Metaforo configuration information from the configuration file.
+- Fixed permission errors when creating projects.
+
 ### Alpha v0.4.0 - 8 Jan 2024
 
 SeeDAO App Alpha v0.4.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
