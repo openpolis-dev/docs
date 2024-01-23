@@ -22,6 +22,21 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.2 - 22 Jan 2024
+
+SeeDAO App Alpha v0.4.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Added support for creating multi-option polls with percentages
+- Updated data model to support multiple voting options and result calculation
+- Updated automation task types and trigger conditions
+- Added the associated proposal component of the web-based proposal system.
+- Added the display of related proposal components on the proposal detail page of cell phone.
+- Add "Create New Proposal (Multiple Options)" function to restrict its use to Town Hall members only.
+- Modify the wiki collaboration page to be private
+- Optimize the error message when registering SNS
+- Optimize the proposal function
+- Fixed known issues
+
 ### Alpha v0.4.1 - 15 Jan 2024
 
 SeeDAO App Alpha v0.4.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
