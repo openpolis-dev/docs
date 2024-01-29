@@ -22,6 +22,27 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.4.2 - 29 Jan 2024
+
+SeeDAO App Beta v0.4.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Addition of the first version of the proposal system
+    - Proposals can be created and modified according to different permissions
+    - Supports NFT Gate for proposals and NFT Gate for votes.
+    - City Council members can review the proposal.
+    - The proposal details page can show the details of the proposal
+    - Proposals can be voted on and the status of the vote can be viewed
+    - Automated execution of voted proposals (partially).
+    - Comments and replies can be made in the proposal details
+    - View different versions of the proposal
+    - You can share the proposal.
+    - You can view your personal operation history.
+- Replace the wallet connection library to optimize the wallet connection experience
+- Replace the link to build a city-state after successful SNS registration.
+- Add SeeDAO podcasts to the homepage of the web site.
+- Optimize SNS transaction processing on web side.
+- Modify the wiki collaboration page on the web side to be private.
+
 ### Alpha v0.4.2 - 22 Jan 2024
 
 SeeDAO App Alpha v0.4.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
