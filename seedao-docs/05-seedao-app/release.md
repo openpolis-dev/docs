@@ -22,6 +22,14 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.4 - 30 Jan 2024
+
+SeeDAO App Alpha v0.4.4 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Fixed the problem that the categories and templates were messed up when creating a proposal.
+- Fixed a problem that prompts you to log in to metaforo
+- Fixed a problem that caused the components to be out of order after creating and editing a proposal.
+
 ### Alpha v0.4.3 - 30 Jan 2024
 
 SeeDAO App Alpha v0.4.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
