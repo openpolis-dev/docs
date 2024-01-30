@@ -22,6 +22,17 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.3 - 30 Jan 2024
+
+SeeDAO App Alpha v0.4.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Modify the categories selected when creating a proposal
+- Add a series of proposal templates and redefine the rules for using them.
+- Support to create proposals with multiple voting options.
+- Add a wait time display after the vote is passed.
+- Add template tags to be used in proposal details
+- Integrate SeeAuth login
+
 ### Beta v0.4.2 - 29 Jan 2024
 
 SeeDAO App Beta v0.4.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
