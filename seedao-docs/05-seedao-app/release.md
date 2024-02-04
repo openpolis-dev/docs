@@ -22,6 +22,28 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpah v0.4.7 - 4 Feb 2024
+
+SeeDAO App Alpha v0.4.7 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Adjust some styles
+- Restore end-of-vote text alerts
+- Add SIP display for proposal title
+- Add SIP proposal filter in proposal list
+- Fix the error of opening links of proposals with other status in the review proposal page.
+- Modify the text prompt of the input box in the proposal template does not appear in the text.
+- Modify the error message of the proposal component.
+- Add a link to the voting rules of the proposal.
+- Fix the problem that the avatar of the creator of the proposal is not displayed.
+- Remove the template tab for proposals that don't use the template.
+- Modify the ordering of components in the project proposal template.
+- Fixed the issue that withdrawn proposals automatically go to the next stage in some cases.
+- Fix an issue where automated tasks are not triggered properly in some cases.
+- Update the rule for same counting result in multi-option voting according to the proposal category.
+- Updated rules for counting results when no one is voting
+- Fix a timing error in P1 template in some cases.
+- Fix the problem that the information of project creation and closure cannot be matched in some cases.
+
 ### Alpha v0.4.4 - 30 Jan 2024
 
 SeeDAO App Alpha v0.4.4 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
