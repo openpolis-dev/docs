@@ -22,7 +22,22 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
-### Alpah v0.4.7 - 4 Feb 2024
+### Alpha v0.4.9 - 6 Feb 2024
+
+SeeDAO App Alpha v0.4.9 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Modified project/guild creation portal to explore page
+- Removed project closure review from Town Hall - Governance
+- Added guild closure feature to guilds
+- Removed guild leader's ability to edit guilds
+- Added status tab to project/guild list
+- New create project/guild and details display
+- Import project/guild raw data
+- Updated template-based proposal creation and voting threshold logic.
+- Updated voting status update based on vote base.
+- Fixed the issue of proposal status change when there is no vote.
+
+### Alpha v0.4.7 - 4 Feb 2024
 
 SeeDAO App Alpha v0.4.7 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
