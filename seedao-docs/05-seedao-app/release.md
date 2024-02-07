@@ -22,6 +22,19 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.10 - 8 Feb 2024
+
+SeeDAO App Alpha v0.4.10 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Add a guide to install wallet in the login pop-up window
+- Add wait status to submit button when submitting a proposal
+- Compatible with Metaforo when new users can't get Metaforo permission when logging in the app.
+- Remove the permission that you must be logged in to access the content on mobile.
+- Fix the problem that P1 project creation component is missing.
+- Fixed the issue that P1 project closure component can't display the project information.
+- Fix wrong order of proposal return
+- Fix the logic of vote base checking
+
 ### Alpha v0.4.9 - 6 Feb 2024
 
 SeeDAO App Alpha v0.4.9 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
