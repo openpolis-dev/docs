@@ -22,6 +22,20 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Alpha v0.4.13 - 26 Feb 2024
+
+SeeDAO App Alpha v0.4.13 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+- Fixed the scrolling problem when there is only one comment in the proposal.
+- Add common_budget_source when applying for credits
+- Add check when filling in the budget of P1/P2 proposal.
+- Add the function of uploading pictures to the proposal content
+- Remove the function of entering the time limit for the completion of the plan in the proposal component.
+- Add SNS invitation function
+- Adjust part of the navigation to the application
+- Refactor the proposal code and fix stability issues
+- Optimize the mechanism of proposal synchronization with OS internal and Metaforo data.
+
 ### Alpha v0.4.10 - 8 Feb 2024
 
 SeeDAO App Alpha v0.4.10 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
