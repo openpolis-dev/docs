@@ -22,6 +22,36 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.4.14 - 29 Feb 2024
+
+SeeDAO App Beta v0.4.14 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Proposals
+  - Modify the process of selecting a template when creating a proposal
+ Refactoring the proposal automation logic to support multiple vote types and automated operations.
+  - Refactoring the proposal state transition logic to support a more flexible process.
+  - Add SIP display for proposal
+  - Add SIP filter to proposal list
+  - Add links to proposal voting rules
+  - Support filling customized options when creating a proposal
+  - Add multiple states for proposals
+  - Optimize the style of proposal components
+- Project/Guild
+  - Refactored project and guild data structure to conform to the new create project/guild and details display.
+  - Modified the project/guild creation portal to the Explore page.
+  - Removed project closure review from city hall - governance.
+  - Added closure feature to guild.
+  - Removed the ability for guild moderator to edit guild.
+  - Add status tab and category tab to project/guild list.
+  - Add search function to project/guild list.
+- Adjusted navigation sorting and moved some navigation functions to app list.
+- Add Echo in application list.
+- Integrate SeeAuth login.
+- Add wallet installation guide in login popup dialog.
+- Add SNS invitation.
+- Update the application import tool to support importing applications with different status.
+
 ### Alpha v0.4.13 - 26 Feb 2024
 
 SeeDAO App Alpha v0.4.13 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
