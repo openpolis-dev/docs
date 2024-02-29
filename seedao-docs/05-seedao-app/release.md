@@ -46,11 +46,11 @@ Changelog:
   - Add status tab and category tab to project/guild list.
   - Add search function to project/guild list.
 - Adjusted navigation sorting and moved some navigation functions to app list.
-* Add Echo in application list.
-* Integrate SeeAuth login.
-* Add wallet installation guide in login popup dialog.
-* Add SNS invitation.
-* Update the application import tool to support importing applications with different status.
+- Add Echo in application list.
+- Integrate SeeAuth login.
+- Add wallet installation guide in login popup dialog.
+- Add SNS invitation.
+- Update the application import tool to support importing applications with different status.
 
 ### Alpha v0.4.13 - 26 Feb 2024
 
