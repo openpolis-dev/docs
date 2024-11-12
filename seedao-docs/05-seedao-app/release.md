@@ -10,26 +10,43 @@ sidebar_position: 1
 There are three versions of SeeDAO App.  
 The release version provides more stable features for the community to use, and the development team will ensure the availability of data and services.  
 The preview version provides the latest features but may be deleted at any time, so you can experience the features in the preview version.  
-The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.  
+The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.
 
 Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
 Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
-Development Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)  
+Development Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)
 
 Notes:
+
 - The current versions only support desktop web version, mobile will be supported in the coming versions.
 - You need to click "Allow" when the pop-up window allows notification to receive corresponding notification.
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
+
+### Beta v0.7.0 - 12 Nov 2024
+
+SeeDAO App Beta v0.7.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+
+- Added SBT management tool to support Town Hall member SBT and micro committees
+- Added SNS bulk verification governance tool
+- Added proposal system to add voted status display on the proposal list
+- Contributor level help information
+- Added SeeDAO node announcement for the current season.
+- Added personal profile search for community members
+- Automated distribution of SCR points
+- Automated calculation of governance mining
 
 ### Beta v0.4.14 - 29 Feb 2024
 
 SeeDAO App Beta v0.4.14 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Proposals
   - Modify the process of selecting a template when creating a proposal
- Refactoring the proposal automation logic to support multiple vote types and automated operations.
+    Refactoring the proposal automation logic to support multiple vote types and automated operations.
   - Refactoring the proposal state transition logic to support a more flexible process.
   - Add SIP display for proposal
   - Add SIP filter to proposal list
@@ -140,16 +157,16 @@ SeeDAO App Alpha v0.4.3 is released. The release note can be viewed at https://d
 SeeDAO App Beta v0.4.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 - Addition of the first version of the proposal system
-    - Proposals can be created and modified according to different permissions
-    - Supports NFT Gate for proposals and NFT Gate for votes.
-    - City Council members can review the proposal.
-    - The proposal details page can show the details of the proposal
-    - Proposals can be voted on and the status of the vote can be viewed
-    - Automated execution of voted proposals (partially).
-    - Comments and replies can be made in the proposal details
-    - View different versions of the proposal
-    - You can share the proposal.
-    - You can view your personal operation history.
+  - Proposals can be created and modified according to different permissions
+  - Supports NFT Gate for proposals and NFT Gate for votes.
+  - City Council members can review the proposal.
+  - The proposal details page can show the details of the proposal
+  - Proposals can be voted on and the status of the vote can be viewed
+  - Automated execution of voted proposals (partially).
+  - Comments and replies can be made in the proposal details
+  - View different versions of the proposal
+  - You can share the proposal.
+  - You can view your personal operation history.
 - Replace the wallet connection library to optimize the wallet connection experience
 - Replace the link to build a city-state after successful SNS registration.
 - Add SeeDAO podcasts to the homepage of the web site.
@@ -176,6 +193,7 @@ SeeDAO App Alpha v0.4.2 is released. The release note can be viewed at https://d
 SeeDAO App Alpha v0.4.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Replaced the link for successful co-building of city-states through SNS registration.
 - Fixed the version missing bug in propsal with multiple edit histories.
 - Updated the style of the voting module.
@@ -197,6 +215,7 @@ Changelog:
 SeeDAO App Alpha v0.4.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Add proposal system
 - SeeDAO podcast added to homepage
 - Optimized wallet connection and SNS trading technology
@@ -206,6 +225,7 @@ Changelog:
 SeeDAO App Alpha v0.2.4 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Switch to using the Goerli network.
 - Support UniPass registration/switching for SNS.
 - Optimize login reminders when using the registered SNS feature.
@@ -224,6 +244,7 @@ Changelog:
 SeeDAO App Alpha v0.2.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Add SNS registration and switching to use SNS (unipass does not support the current test network)
 - Add filtering and searching for vault assets list.
 - Add detailed_type query support in application list.
@@ -243,12 +264,12 @@ Changelog:
 - Fix the error of not setting the audit time correctly when the application is rejected.
 - Add SNS registration and switching to SNS on mobile terminal (unipass does not support the current test network).
 
-
 ### Alpha v0.2.2 - 24 Nov 2023
 
 SeeDAO App Alpha v0.2.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Support mobile version.
 - SIP Link check.
 - Optimize Treasury page, increase loading speed.
@@ -263,6 +284,7 @@ Changelog:
 SeeDAO App Alpha v0.2.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Add cityhall architecture for display.
 - Added the function of adjusting cityhall members.
 - Added total assets display and application instructions on points registration approval page.
@@ -284,6 +306,7 @@ After one week of development, SeeDAO App Beta v0.2.0 is released.
 The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Add node qualification calculation
 - Added Bounty Pub
 - Add community resource request list
@@ -311,13 +334,13 @@ Changelog:
 - Adjust list of projects/guilds.
 - Adjust the detail page for projects/guilds.
 
-
 ### Alpha 0.1.3 - 10 Nov 2023
 
 After one week of development, SeeDAO App Alpha v0.1.3 is released.
 The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Add Snapshot for SEED.
 - Add function of selecting SeeDAO Node.
 - Add poll info.
@@ -342,6 +365,7 @@ After one week of development, SeeDAO App Alpha v0.1.2 is released.
 The version update log can be viewed at https://docs.seedao.tech/seedao-app/updates
 
 Changelog:
+
 - Replace the UI style of the new version
 - Updated Bounty Tavern to Tavern, optimized display information and UI.
 - Optimize the display of community calendar
@@ -358,12 +382,12 @@ Changelog:
 - Add the function to audit the closure of projects.
 - Increase the function to audit the closure of guilds
 
-
 ### Alpha 0.1.1 - 28 Oct 2023
 
 After four days of development, SeeDAO App Alpha v0.1.1 is released.
 
 Changelog:
+
 - Add community exploration to view current community projects and unions
 - Add proposal information display
 - Replace part of the UI of the new version
@@ -375,6 +399,7 @@ Changelog:
 After a few weeks, the SeeDAO App has now completed the development of some of the established features and is now available in an updated version for community use, testing and feedback.
 
 Contents:
+
 - SeeDAO Data Overview
 - Offline and community event organizing
 - SeeDAO Community Calendar and Calendar Synchronization
