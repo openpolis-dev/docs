@@ -23,6 +23,16 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.7.2 - 11 Dec 2024
+
+SeeDAO App Beta v0.7.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+
+- Proposal sip issue fix
+- SNS query error report problem fix
+- Proposal voting problem fixes
+
 ### Beta v0.7.0 - 12 Nov 2024
 
 SeeDAO App Beta v0.7.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
