@@ -32,6 +32,9 @@ Changelog:
 - Proposal sip issue fix
 - SNS query error report problem fix
 - Proposal voting problem fixes
+- Closing Proposal Incentive Automation Issue Fix
+- SCR release automation fixes
+- mefaforo seeauth issue fix
 
 ### Beta v0.7.0 - 12 Nov 2024
 
