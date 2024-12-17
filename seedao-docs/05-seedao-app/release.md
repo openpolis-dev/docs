@@ -23,6 +23,14 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.7.3 - 17 Dec 2024
+
+SeeDAO App Beta v0.7.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+
+- Replace MATIC with POL
+
 ### Beta v0.7.2 - 11 Dec 2024
 
 SeeDAO App Beta v0.7.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
@@ -35,6 +43,7 @@ Changelog:
 - Closing Proposal Incentive Automation Issue Fix
 - SCR release automation fixes
 - mefaforo seeauth issue fix
+- Fix incomplete display of comments
 
 ### Beta v0.7.0 - 12 Nov 2024
 
