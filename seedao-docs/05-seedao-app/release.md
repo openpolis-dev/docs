@@ -42,6 +42,7 @@ Changelog:
 - Upgraded error prompts with detailed messages and error codes.
 - Removed "unvoted" prompts for proposals when users lack voting permissions.
 - Improved accessibility to the Whitepaper entry.
+- Fixed the SeePass issue related to new SNS indexing.
 
 ### Beta v0.7.3 - 17 Dec 2024
 
