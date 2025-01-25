@@ -23,6 +23,26 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.8.0 - 25 Jan 2025
+
+SeeDAO App Beta v0.8.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Fixed Twitter parsing errors in personal information editing.
+- Added statistical data display to the City Hall asset distribution interface.
+- Added Community Bulletin Board features (list, details, creation, editing, and management).
+- Added record links to the SNS page.
+- Integrated WalletConnect functionality.
+- Added Archives feature.
+- Optimized the time picker component in proposals.
+- Improved the incentive application form (empty state, input/import toggling, error prompts).
+- Enhanced homepage data display for governance nodes and SBT holders.
+- Sorted distribution records by quarter.
+- Refined UI for the SBT display interface.
+- Upgraded error prompts with detailed messages and error codes.
+- Removed "unvoted" prompts for proposals when users lack voting permissions.
+- Improved accessibility to the Whitepaper entry.
+
 ### Beta v0.7.3 - 17 Dec 2024
 
 SeeDAO App Beta v0.7.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
