@@ -23,6 +23,17 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.8.1 - 7 Feb 2025
+
+SeeDAO App Beta v0.8.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Fixed known errors in proposals.
+- Optimized the display of SBT issuance records.
+- Removed library loading for SendingMe.
+- Fixed known bugs in vault asset application.
+- Fixed known bugs in SNS query.
+
 ### Beta v0.8.0 - 25 Jan 2025
 
 SeeDAO App Beta v0.8.0 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
