@@ -23,6 +23,31 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+
+### Beta v0.8.4 - 13 Mar 2025
+
+SeeDAO App Beta v0.8.4 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Update title and slogan
+
+
+### Beta v0.8.3 - 6 Mar 2025
+
+SeeDAO App Beta v0.8.3 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Change the default language to Chinese.
+- Fixed the issue in the proposal where voting prompts should not be displayed for users without permission.
+- Fixed the issue where SNS sometimes fails to display.
+
+### Beta v0.8.2 - 14 Feb 2025
+
+SeeDAO App Beta v0.8.2 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Fixing the problem of unsubmitted proposal changes.
+
 ### Beta v0.8.1 - 7 Feb 2025
 
 SeeDAO App Beta v0.8.1 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
