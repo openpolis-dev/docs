@@ -6,13 +6,13 @@ This guide provides essential information on how to interact with the API endpoi
 
 ### Authentication
 
-To ensure secure access to the API, authentication is required 🛡️. You can authenticate your API requests using the Bearer Token mechanism. Obtain your API key from Profile > SeeChat in the SeeDAO OS.
+To ensure secure access to the API, authentication is required 🛡️. You can authenticate your API requests using the Bearer Token or X-API-Key. Obtain your API key from Profile > SeeChat in the SeeDAO OS.
 
 ### 💬 Chat Completions
 Supports streaming responses and multi-turn conversations
 
 ```shell
-POST /v1/chat/completions
+POST /api/v1/chat/completions
 ```
 
 ```shell

@@ -7,5 +7,5 @@ One-Click to get a well-designed cross-platform ChatGPT web UI，support multipl
 
 
 ### Integrate with SeeChat API
-fill OpenAI Endpoint with ```https://dschat.seedao.tech/v1/api/chat/completions#```
+fill Deepseek Endpoint with ```https://zhaodapao.rebuildtraffic.com/v1/api/chat/completions#```
 <img src="/img/integration/ChatGPT-Next-Web.png" />

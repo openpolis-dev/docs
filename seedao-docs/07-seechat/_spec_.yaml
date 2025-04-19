@@ -6,7 +6,7 @@ info:
   version: 1.0.0
 
 servers:
-  - url: "https://dschat.seedao.tech/v1/"
+  - url: "https://zhaodapao.rebuildtraffic.com/v1/"
     description: "dev env for the API"
 paths:
   "/api/chat/completions":
@@ -18,7 +18,14 @@ paths:
       parameters:
         - in: header
           name: Authorization
-          description: Bearer token 认证
+          description: |
+            This field can adopt either of the following two formats:
+            
+            Bearer Token format: Authorization: Bearer ***<your_token_here>***
+            
+            API Key format: X-API-Key: ***<your_token_here>***
+            
+            ***Note: You must choose one of the two formats exclusively.***
           required: true
           schema:
             type: string
@@ -47,8 +54,8 @@ components:
           required: true
           description: |
             ID of the model to use. 
-            Possible values: [***deepseek-chat***, ***deepseek-reasoner-bf16***]
-          example: deepseek-reasoner-bf16
+            Possible values: [***deepseek-chat***, ***deepseek-reasoner***]
+          example: deepseek-reasoner
         frequency_penalty:
           type: number
           required: false
@@ -56,6 +63,8 @@ components:
             Number between -2.0 and 2.0. Positive values penalize new tokens based on their existing frequency in the text so far, decreasing the model's likelihood to repeat the same line verbatim.
             
             Possible values: ```>= -2``` and ```<= 2```
+            
+            Default value: ***0***
         max_tokens:
           type: integer
           required: false
@@ -63,6 +72,7 @@ components:
             Integer between 1 and 8192. The maximum number of tokens that can be generated in the chat completion.The total length of input tokens and generated tokens is limited by the model's context length.If max_tokens is not specified, the default value 4096 is used.
             
             Possible values: ```> 1```
+             Default value: ***4096***
           example: 8192
         presence_penalty:
           type: number
@@ -70,6 +80,8 @@ components:
           description: |
               Number between -2.0 and 2.0. Positive values penalize new tokens based on whether they appear in the text so far, increasing the model's likelihood to talk about new topics.
               Possible values: ```>= -2``` and ```<= 2```
+            
+              Default value: ***0***
         response_format:
           type: object
           description: |
@@ -93,18 +105,25 @@ components:
           type: number
           description: |
             What sampling temperature to use, between 0 and 2. Higher values like 0.8 will make the output more random, while lower values like 0.2 will make it more focused and deterministic.We generally recommend altering this or top_p but not both.
+            
             Possible values: ```<= 2```
+            
+             Default value: ***1***
           example: 1
         top_p:
           type: number
           description: |
             An alternative to sampling with temperature, called nucleus sampling, where the model considers the results of the tokens with top_p probability mass. So 0.1 means only the tokens comprising the top 10% probability mass are considered.
+            
             Possible values: ```<= 1```
+            
+             Default value: ***1***
           example: 1
         tools:
           type: array
           description: |
-            A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported. <a href="https://api-docs.deepseek.com/api/create-chat-completion">View More </a>
+            A list of tools the model may call. Currently, only functions are supported as a tool. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported. 
+            <a href="https://api-docs.deepseek.com/api/create-chat-completion">View More </a>
           example: null
         logprobs:
           type: boolean
@@ -115,6 +134,7 @@ components:
           type: integer
           description: |
              An integer between 0 and 20 specifying the number of most likely tokens to return at each token position, each with an associated log probability. logprobs must be set to true if this parameter is used.
+              
               Possible values: ```<= 20```
       required:
         - messages

@@ -14,7 +14,7 @@ will counted based on the total number of input and output tokens by the model.
         <tr>
             <th>MODEL</th>
             <th>deepseek-chat</th>
-            <th>deepseek-reasoner-bf16</th>
+            <th>deepseek-reasoner</th>
         </tr>
     </thead>
     <tbody>
@@ -23,7 +23,7 @@ will counted based on the total number of input and output tokens by the model.
                 CONTEXT LENGTH
             </td>
             <td>64K</td>
-            <td>32K</td>
+            <td>64K</td>
         </tr>
         <tr>
             <td>
@@ -43,6 +43,6 @@ will counted based on the total number of input and output tokens by the model.
 </table>
 
 ### Tips
--  The deepseek-chat model points to ```DeepSeek-V3```. The ```deepseek-reasoner-bf16``` model points to DeepSeek-R1.
+-  The deepseek-chat model points to ```DeepSeek-V3```. The ```deepseek-reasoner``` model points to DeepSeek-R1.
 
 -   ***MAX OUTPUT TOKENS:*** Integer between 1 and 8192. The maximum number of tokens that can be generated in the chat completion. The total length of input tokens and generated tokens is limited by the model's context length. If max_tokens is not specified, the default value 4096 is used.
