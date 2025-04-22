@@ -12,7 +12,7 @@ To ensure secure access to the API, authentication is required 🛡️. You can 
 Supports streaming responses and multi-turn conversations
 
 ```shell
-POST /api/v1/chat/completions
+POST /v1/chat/completions
 ```
 
 ```shell
