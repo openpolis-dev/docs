@@ -22,8 +22,8 @@ will counted based on the total number of input and output tokens by the model.
             <td>
                 CONTEXT LENGTH
             </td>
-            <td>64K</td>
-            <td>64K</td>
+            <td>32K</td>
+            <td>32K</td>
         </tr>
         <tr>
             <td>
