@@ -23,6 +23,14 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.8.7 - 22 Apr 2025
+
+SeeDAO App Beta v0.8.6 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Optimize SeeChat DeepSeek API Response
+- Update Profile for SeeChat API
+
 ### Beta v0.8.6 - 11 Apr 2025
 
 SeeDAO App Beta v0.8.6 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
