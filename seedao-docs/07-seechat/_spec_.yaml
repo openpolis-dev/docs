@@ -6,10 +6,10 @@ info:
   version: 1.0.0
 
 servers:
-  - url: "https://zhaodapao.rebuildtraffic.com/v1/"
+  - url: "https://ds.seedao.tech/v1"
     description: "dev env for the API"
 paths:
-  "/api/chat/completions":
+  "/chat/completions":
     post:
       summary: Completions
       tags:
