@@ -13,7 +13,7 @@ The preview version provides the latest features but may be deleted at any time,
 The development version is for internal use by the development team, for code development and feature verification, and may be deleted at any time.
 
 Release Version: [https://app.seedao.xyz/](https://app.seedao.xyz/)  
-Preview Version: [https://preview.seedao.tech/](https://preview.seedao.tech/)  
+Preview Version: [https://preview-app.seedao.tech/](https://preview-app.seedao.tech/)  
 Development Version: [https://dev-app.seedao.tech/](https://dev-app.seedao.tech/)
 
 Notes:
