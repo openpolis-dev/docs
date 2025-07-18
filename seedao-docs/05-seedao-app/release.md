@@ -23,6 +23,13 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.8.9 - 18 July 2025
+
+SeeDAO App Beta v0.8.9 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Update the method of obtaining event data
+
 ### Beta v0.8.8 - 18 Jun 2025
 
 SeeDAO App Beta v0.8.8 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
