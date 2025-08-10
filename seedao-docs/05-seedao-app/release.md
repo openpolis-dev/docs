@@ -23,6 +23,22 @@ Notes:
 - The datasets in preview version and dev version are subject to change and update at any time.
 - The code repo is open source and can be accessed on Github.
 
+### Beta v0.8.10 - 10 AUG 2025
+
+SeeDAO App Beta v0.8.10 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
+
+Changelog:
+- Update SCR to WANG.
+- Add SEE.
+- Update the homepage statistics to display: Members, Seed Members, and Governance Nodes.
+- Update the homepage applications to "Community Proposal Projects."
+- Remove the Guild section.
+- Delete certain applications and adjust their positioning.
+- Remove the Resource Application section.
+- Add a "Contact Assistant" feature.
+- Change the voting threshold for P1 proposals to the current season City Hall.
+- Change the voting threshold for P2 project approval and completion to the current season City Hall.
+
 ### Beta v0.8.9 - 18 July 2025
 
 SeeDAO App Beta v0.8.9 is released. The release note can be viewed at https://docs.seedao.tech/seedao-app/updates
