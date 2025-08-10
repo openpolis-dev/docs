@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkseedao_docs=self.webpackChunkseedao_docs||[]).push([[2360],{76233:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-openapi","id":"default"}')}}]);
