@@ -36,8 +36,8 @@ Changelog:
 - Delete certain applications and adjust their positioning.
 - Remove the Resource Application section.
 - Add a "Contact Assistant" feature.
-- Change the voting threshold for P1 proposals to the current quarter’s Town Hall.
-- Change the voting threshold for P2 project approval and completion to the current quarter’s Town Hall.
+- Change the voting threshold for P1 proposals to the current season City Hall.
+- Change the voting threshold for P2 project approval and completion to the current season City Hall.
 
 ### Beta v0.8.9 - 18 July 2025
 
